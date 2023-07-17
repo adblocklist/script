@@ -3,7 +3,7 @@ topBar.style.position = "fixed";
 topBar.style.top = "0";
 topBar.style.left = "0";
 topBar.style.width = "100%";
-topBar.style.height = "50px";
+topBar.style.height = "0"; // Start off collapsed
 topBar.style.background = "rgba(0, 0, 0, 0.5)";
 topBar.style.zIndex = "9999";
 
@@ -47,16 +47,16 @@ collapseButton.style.fontFamily = "Arial, sans-serif";
 collapseButton.style.boxShadow = "0 0 8px rgba(0, 123, 255, 0.5)";
 
 collapseButton.addEventListener("click", function() {
-  if (topBar.style.height === "50px") {
-    topBar.style.height = "0";
-    collapseButton.textContent = "Expand";
-    button1.style.display = "none";
-    button2.style.display = "none";
-  } else {
+  if (topBar.style.height === "0") {
     topBar.style.height = "50px";
     collapseButton.textContent = "Collapse";
     button1.style.display = "inline-block";
     button2.style.display = "inline-block";
+  } else {
+    topBar.style.height = "0";
+    collapseButton.textContent = "Expand";
+    button1.style.display = "none";
+    button2.style.display = "none";
   }
 });
 
