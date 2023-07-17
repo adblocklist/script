@@ -102,18 +102,3 @@ button3.addEventListener("click", function() {
   const b = new Blob([i], { type: "text/html" });
   window.location.href = URL.createObjectURL(b);
 });
-
-
-var exitKey = localStorage.getItem("exit");
-var siteURL = localStorage.getItem("site");
-
-if (exitKey && exitKey.trim() !== "") {
-  window.addEventListener("keydown", function(r) {
-    if (r.key === exitKey) {
-      if (!siteURL || siteURL.trim() === "") {
-        siteURL = "https://google.com/";
-      }
-      window.location.href = siteURL;
-    }
-  });
-}
