@@ -1,4 +1,5 @@
 var topBar = document.createElement("div");
+topBar.classList.add("collapsed"); // Add CSS class for initial state
 topBar.style.position = "fixed";
 topBar.style.top = "0";
 topBar.style.left = "0";
@@ -6,9 +7,7 @@ topBar.style.width = "100%";
 topBar.style.height = "50px";
 topBar.style.background = "rgba(0, 0, 0, 0.5)";
 topBar.style.zIndex = "9999";
-topBar.style.display = "flex";
-topBar.style.justifyContent = "flex-start";
-topBar.style.padding = "0 10px";
+topBar.style.transition = "height 0.3s"; // Add smooth transition for height change
 
 var button1 = document.createElement("button");
 button1.textContent = "Inspect";
@@ -48,7 +47,7 @@ topBar.appendChild(button2);
 topBar.appendChild(button3);
 
 var collapseButton = document.createElement("button");
-collapseButton.textContent = "Collapse";
+collapseButton.textContent = "Expand";
 collapseButton.style.position = "absolute";
 collapseButton.style.top = "5px";
 collapseButton.style.right = "10px";
@@ -62,18 +61,14 @@ collapseButton.style.fontFamily = "Arial, sans-serif";
 collapseButton.style.boxShadow = "0 0 8px rgba(0, 123, 255, 0.5)";
 
 collapseButton.addEventListener("click", function() {
-  if (topBar.style.height === "50px") {
-    topBar.style.height = "0";
-    collapseButton.textContent = "Expand";
-    button1.style.display = "none";
-    button2.style.display = "none";
-    button3.style.display = "none";
-  } else {
-    topBar.style.height = "50px";
+  if (topBar.classList.contains("collapsed")) {
+    topBar.classList.remove("collapsed");
+    topBar.style.height = "auto";
     collapseButton.textContent = "Collapse";
-    button1.style.display = "inline-block";
-    button2.style.display = "inline-block";
-    button3.style.display = "inline-block";
+  } else {
+    topBar.classList.add("collapsed");
+    topBar.style.height = "50px";
+    collapseButton.textContent = "Expand";
   }
 });
 
