@@ -2,10 +2,13 @@ var topBar = document.createElement("div");
 topBar.style.position = "fixed";
 topBar.style.top = "0";
 topBar.style.left = "0";
-topBar.style.width = "20px";
+topBar.style.width = "100%";
 topBar.style.height = "50px";
 topBar.style.background = "rgba(0, 0, 0, 0.5)";
 topBar.style.zIndex = "9999";
+topBar.style.display = "flex";
+topBar.style.justifyContent = "flex-start";
+topBar.style.padding = "0 10px";
 
 var button1 = document.createElement("button");
 button1.textContent = "Inspect";
