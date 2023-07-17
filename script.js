@@ -3,7 +3,7 @@ topBar.style.position = "fixed";
 topBar.style.top = "0";
 topBar.style.left = "0";
 topBar.style.width = "100%";
-topBar.style.height = "50px";
+topBar.style.height = "0";
 topBar.style.background = "rgba(0, 0, 0, 0.5)";
 topBar.style.zIndex = "9999";
 
