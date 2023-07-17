@@ -19,7 +19,7 @@ button1.style.cursor = "pointer";
 button1.style.fontFamily = "Arial, sans-serif";
 
 var button2 = document.createElement("button");
-button2.textContent = "Remove Iframe";
+button2.textContent = "Remove Iframes";
 button2.style.margin = "5px";
 button2.style.padding = "10px 20px";
 button2.style.border = "none";
@@ -34,7 +34,6 @@ topBar.appendChild(button2);
 
 var collapseButton = document.createElement("button");
 collapseButton.textContent = "Collapse";
-collapseButton.id = "collapse-button-menu";
 collapseButton.style.position = "absolute";
 collapseButton.style.top = "5px";
 collapseButton.style.right = "10px";
@@ -60,9 +59,6 @@ collapseButton.addEventListener("click", function() {
     button2.style.display = "none";
   }
 });
-
-var button = document.getElementById("collapse-button-menu");
-button.click();
 
 topBar.appendChild(collapseButton);
 
