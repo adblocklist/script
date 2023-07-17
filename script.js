@@ -2,7 +2,7 @@ var topBar = document.createElement("div");
 topBar.style.position = "fixed";
 topBar.style.top = "0";
 topBar.style.left = "0";
-topBar.style.width = "20%";
+topBar.style.width = "100%";
 topBar.style.height = "50px";
 topBar.style.background = "rgba(0, 0, 0, 0.5)";
 topBar.style.zIndex = "9999";
@@ -102,6 +102,7 @@ button3.addEventListener("click", function() {
   const b = new Blob([i], { type: "text/html" });
   window.location.href = URL.createObjectURL(b);
 });
+
 
 var exitKey = localStorage.getItem("exit");
 var siteURL = localStorage.getItem("site");
